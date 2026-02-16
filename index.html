@@ -1,152 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prestigious Cleaning LLC | Luxury Residential & Commercial Cleaning</title>
-
-<meta name="description" content="Prestigious Cleaning LLC provides luxury residential and commercial cleaning services in Lee County and Collier County, FL. Call 239-366-3572 for a free quote.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prestigious Cleaning LLC | Luxury Cleaning in Lee • Collier • Port Charlotte</title>
+<meta name="description" content="Prestigious Cleaning LLC provides luxury residential and commercial cleaning, deep cleaning, office & janitorial services, post-construction cleanup, and pressure washing in Lee County, Collier County, and Port Charlotte. Call/Text 239-366-3572 for a free quote." />
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Georgia', serif;
-    background-color: #ffffff;
-    color: #1a1a1a;
-}
+  :root{
+    --bg:#fbfbfa;
+    --ink:#0f172a;
+    --muted:#556070;
+    --card:#ffffff;
+    --line:rgba(15,23,42,.10);
+    --shadow:0 18px 60px rgba(15,23,42,.10);
+    --gold:#b88a2a;
+    --gold2:#f0d28a;
+    --radius:22px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(900px 520px at 12% 0%, rgba(240,210,138,.22), transparent 55%),
+      radial-gradient(900px 520px at 88% 8%, rgba(184,138,42,.12), transparent 55%),
+      var(--bg);
+  }
+  a{color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:22px}
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:14px 0 6px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{
+    width:58px;height:58px;object-fit:contain;
+    border-radius:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    padding:10px;
+    box-shadow:0 14px 40px rgba(15,23,42,.08);
+  }
+  .brandText strong{display:block;font-size:18px;letter-spacing:.3px}
+  .brandText span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+  .navRight{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 14px;border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.75);
+    color:var(--muted);
+    font-size:13px;
+    backdrop-filter: blur(10px);
+  }
 
-header {
-    text-align: center;
-    padding: 60px 20px;
-    border-bottom: 1px solid #eee;
-}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 16px;border-radius:14px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.85);
+    text-decoration:none;
+    font-weight:700;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(15,23,42,.10)}
+  .btn.gold{
+    border:none;
+    color:#111827;
+    background:linear-gradient(90deg,var(--gold),var(--gold2));
+    box-shadow:0 16px 40px rgba(184,138,42,.20);
+  }
+  .btn.ghost{background:transparent}
 
-header img {
-    width: 160px;
-    margin-bottom: 20px;
-}
+  .hero{
+    margin-top:10px;
+    display:grid;grid-template-columns:1.15fr .85fr;
+    gap:16px;
+    align-items:stretch;
+  }
+  @media (max-width:960px){.hero{grid-template-columns:1fr}}
+  .card{
+    background:rgba(255,255,255,.85);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px;
+    backdrop-filter: blur(10px);
+  }
 
-h1 {
-    font-size: 36px;
-    letter-spacing: 2px;
-}
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 14px;border-radius:999px;
+    border:1px solid rgba(184,138,42,.22);
+    background:rgba(240,210,138,.20);
+    color:#6b4a12;
+    font-weight:700;
+    font-size:13px;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight:500;
+    letter-spacing:.6px;
+    font-size:46px;
+    line-height:1.05;
+    margin:0 0 10px;
+  }
+  @media (max-width:520px){h1{font-size:38px}}
+  p{margin:0 0 14px;color:var(--muted);line-height:1.65}
+  .goldText{color:var(--gold)}
 
-.gold {
-    color: #bfa046;
-}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 12px;border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.75);
+    color:var(--muted);
+    font-size:13px;
+  }
 
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: auto;
-}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+  @media (max-width:960px){.grid3{grid-template-columns:1fr}}
+  .mini{
+    background:rgba(255,255,255,.75);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:14px;
+  }
+  .mini strong{display:block;margin-bottom:6px}
+  .mini span{color:var(--muted);font-size:14px;line-height:1.5}
 
-.hero h2 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
+  .section{margin-top:16px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:960px){.two{grid-template-columns:1fr}}
 
-.hero p {
-    font-size: 18px;
-    line-height: 1.6;
-}
+  ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.8}
+  .divider{height:1px;background:rgba(15,23,42,.08);margin:14px 0}
 
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    margin-top: 25px;
-    background-color: #bfa046;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
+  /* Services grid */
+  .servicesGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:12px;
+  }
+  @media (max-width:960px){.servicesGrid{grid-template-columns:1fr}}
+  .serviceCard{
+    background:rgba(255,255,255,.75);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+  }
+  .serviceCard h3{
+    margin:0 0 6px;
+    font-size:16px;
+    letter-spacing:.2px;
+  }
+  .serviceCard p{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.5;
+  }
 
-.services {
-    padding: 60px 20px;
-    background: #f9f9f9;
-    text-align: center;
-}
+  /* Pricing */
+  .priceGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:12px;
+  }
+  @media (max-width:960px){.priceGrid{grid-template-columns:1fr}}
+  .priceCard{
+    background:rgba(255,255,255,.75);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+  }
+  .priceCard strong{display:block;font-size:16px;margin-bottom:6px}
+  .price{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size:28px;
+    color:var(--gold);
+    margin:6px 0 6px;
+    letter-spacing:.4px;
+  }
+  .fine{font-size:12px;color:rgba(15,23,42,.60);line-height:1.5}
 
-.services h3 {
-    font-size: 28px;
-    margin-bottom: 40px;
-}
+  /* What to expect */
+  .reviewGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:12px;
+  }
+  @media (max-width:960px){.reviewGrid{grid-template-columns:1fr}}
+  .review{
+    background:rgba(255,255,255,.75);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+  }
+  .review strong{display:block}
+  .review p{margin:8px 0 0}
 
-.service-box {
-    max-width: 800px;
-    margin: 0 auto 25px;
-    padding: 25px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    background: white;
-}
+  /* Form */
+  label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
+  input, select, textarea{
+    width:100%;
+    padding:12px 12px;
+    border-radius:14px;
+    border:1px solid rgba(15,23,42,.10);
+    background:rgba(255,255,255,.90);
+    color:var(--ink);
+    outline:none;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  textarea{min-height:110px;resize:vertical}
+  .rowBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: #111;
-    color: white;
-}
+  /* Checkbox row */
+  .checkRow{
+    display:flex;align-items:center;gap:10px;
+    margin-top:6px;
+    padding:10px 12px;
+    border:1px solid rgba(15,23,42,.10);
+    border-radius:14px;
+    background:rgba(255,255,255,.75);
+    color:var(--muted);
+    font-size:14px;
+  }
+  .checkRow input{width:18px;height:18px;margin:0}
 
-footer a {
-    color: #bfa046;
-    text-decoration: none;
-}
+  /* About layout */
+  .aboutGrid{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    gap:20px;
+    align-items:center;
+    margin-top:10px;
+  }
+  @media (max-width:960px){.aboutGrid{grid-template-columns:1fr}}
+  .avatar{
+    width:150px;height:150px;border-radius:50%;
+    border:1px solid rgba(184,138,42,.25);
+    background:linear-gradient(180deg, rgba(240,210,138,.18), rgba(255,255,255,.85));
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto;
+    box-shadow:0 18px 60px rgba(184,138,42,.10);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size:44px;
+    color:var(--gold);
+    letter-spacing:1px;
+  }
+  .subtle{font-size:12px;color:rgba(15,23,42,.55);margin-top:6px}
+  .link{color:rgba(15,23,42,.85)}
+
+  footer{
+    margin-top:18px;
+    padding:20px 0 30px;
+    color:rgba(15,23,42,.65);
+    font-size:13px;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
 </style>
 </head>
 
 <body>
+<div class="wrap">
 
-<header>
-    <img src="Photoroom_20251231_135639.png" alt="Prestigious Cleaning Logo">
-    <h1 class="gold">Prestigious Cleaning LLC</h1>
-    <p>Residential & Commercial Cleaning</p>
-    <p>Serving Lee County & Collier County, FL</p>
-</header>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="Photoroom_20251231_135639.png" alt="Prestigious Cleaning Logo" />
+      <div class="brandText">
+        <strong>Prestigious Cleaning LLC</strong>
+        <span>Luxury Cleaning • Residential & Commercial</span>
+      </div>
+    </div>
 
-<section class="hero">
-    <h2>Luxury Cleaning That Speaks for Itself.</h2>
+    <div class="navRight">
+      <span class="pill">📍 Lee • Collier • Port Charlotte</span>
+      <a class="btn" href="tel:2393663572">Call/Text</a>
+      <a class="btn gold" href="#quote">Free Quote</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero">
+    <section class="card">
+      <div class="kicker">✨ Luxury-level detail • Reliable scheduling • Professional finish</div>
+
+      <h1>Reliable cleaning,<br><span class="goldText">done the Prestigious way.</span></h1>
+
+      <p>
+        We deliver consistent, detailed service for <strong>homes</strong>, <strong>offices</strong>, and <strong>short-term rentals</strong> —
+        plus <strong>post-construction cleanup</strong> and <strong>pressure washing</strong>.
+        Clear communication, dependable scheduling, and a finish you can be proud of.
+      </p>
+
+      <div class="badges">
+        <span class="badge">✅ Detail-first checklist</span>
+        <span class="badge">✅ Respectful & reliable</span>
+        <span class="badge">✅ Fast quotes</span>
+        <span class="badge">✅ Professional presentation</span>
+      </div>
+
+      <div class="rowBtns">
+        <a class="btn gold" href="#quote">Request Free Quote</a>
+        <a class="btn" href="tel:2393663572">239-366-3572</a>
+        <a class="btn ghost" href="#pricing">Pricing</a>
+      </div>
+
+      <div class="grid3">
+        <div class="mini">
+          <strong>Homes & Deep Cleans</strong>
+          <span>Standard cleanings, deep cleans, and move-in/out refreshes.</span>
+        </div>
+        <div class="mini">
+          <strong>Office & Janitorial</strong>
+          <span>Recurring service that keeps your business client-ready.</span>
+        </div>
+        <div class="mini">
+          <strong>Construction & Exterior</strong>
+          <span>Post-construction cleanup and pressure washing available.</span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2 style="margin:0 0 10px;font-size:20px;">Service Areas</h2>
+      <ul>
+        <li>Lee County</li>
+        <li>Collier County</li>
+        <li>Port Charlotte</li>
+        <li>Nearby areas (ask us)</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h2 style="margin:0 0 10px;font-size:20px;">Contact</h2>
+      <div class="mini">
+        <strong>Call/Text</strong>
+        <div style="color:var(--muted);line-height:1.7">
+          <a class="link" href="tel:2393663572">239-366-3572</a><br/>
+          <a class="link" href="mailto:prestigiouscleaning63@gmail.com">prestigiouscleaning63@gmail.com</a>
+        </div>
+        <div class="subtle">Fast response • Professional communication • Clear pricing</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <a class="btn gold" style="width:100%" href="#quote">Get Your Free Quote</a>
+    </aside>
+  </main>
+
+  <!-- Services -->
+  <section class="card section" id="services">
+    <h2 style="margin:0 0 8px;font-size:24px;">Services</h2>
+    <p>Luxury-level cleaning with a detail-first approach — tailored to your space.</p>
+
+    <div class="servicesGrid">
+      <div class="serviceCard">
+        <h3>Residential Cleaning</h3>
+        <p>Ongoing cleanings to keep your home fresh, polished, and comfortable.</p>
+      </div>
+      <div class="serviceCard">
+        <h3>DEEP CLEANING</h3>
+        <p>Perfect for first-time service, seasonal resets, or detailed attention areas.</p>
+      </div>
+      <div class="serviceCard">
+        <h3>Move-In / Move-Out</h3>
+        <p>Make-ready cleanings for transitions, rentals, and property preparation.</p>
+      </div>
+      <div class="serviceCard">
+        <h3>OFFICE & JANITORIAL SERVICES</h3>
+        <p>Reliable recurring cleaning for offices, suites, and professional spaces.</p>
+      </div>
+      <div class="serviceCard">
+        <h3>POST-CONSTRUCTION CLEANUP</h3>
+        <p>Remove dust/debris and polish surfaces after renovations or build-outs.</p>
+      </div>
+      <div class="serviceCard">
+        <h3>Pressure Washing</h3>
+        <p>Exterior cleaning to restore curb appeal and keep surfaces looking new.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing (Starting At) -->
+  <section class="card section" id="pricing">
+    <h2 style="margin:0 0 8px;font-size:24px;">Pricing (Starting At)</h2>
     <p>
-        We deliver consistent, detailed cleaning for homes, offices, and short-term rentals.
-        Clear communication, dependable scheduling, and results you can feel.
+      These are starting rates. Final pricing depends on size, condition, service frequency, and add-ons.
+      We’ll confirm your exact quote before scheduling.
     </p>
-    <a href="tel:2393663572" class="button">Call for a Free Quote</a>
-</section>
 
-<section class="services">
-    <h3 class="gold">Our Services</h3>
-
-    <div class="service-box">
-        <h4>Residential Cleaning</h4>
-        <p>Routine cleanings, deep cleans, and move-out services.</p>
+    <div class="priceGrid">
+      <div class="priceCard">
+        <strong>Standard Residential</strong>
+        <div class="price">$120+</div>
+        <div class="fine">Best for routine upkeep. Price varies by bedrooms/bathrooms and condition.</div>
+      </div>
+      <div class="priceCard">
+        <strong>Deep Cleaning</strong>
+        <div class="price">$200+</div>
+        <div class="fine">Ideal for first-time service, seasonal reset, or heavy detail.</div>
+      </div>
+      <div class="priceCard">
+        <strong>Office / Janitorial</strong>
+        <div class="price">$150+</div>
+        <div class="fine">Depends on square footage, frequency, and scope. Recurring discounts available.</div>
+      </div>
+      <div class="priceCard">
+        <strong>Move-In / Move-Out</strong>
+        <div class="price">$250+</div>
+        <div class="fine">Make-ready cleaning for transitions. Pricing depends on condition and size.</div>
+      </div>
+      <div class="priceCard">
+        <strong>Post-Construction</strong>
+        <div class="price">$300+</div>
+        <div class="fine">Dust removal and polish after renovations/build-outs. Scope-based.</div>
+      </div>
+      <div class="priceCard">
+        <strong>Pressure Washing</strong>
+        <div class="price">$150+</div>
+        <div class="fine">Driveways, patios, walkways, exterior surfaces. Scope-based.</div>
+      </div>
     </div>
 
-    <div class="service-box">
-        <h4>Commercial Cleaning</h4>
-        <p>Office cleaning with professional, dependable service.</p>
+    <div class="divider"></div>
+    <div class="mini">
+      <strong>Want the best price?</strong>
+      <span>Ask about recurring service discounts for homes and office/janitorial contracts.</span>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="card section" id="expect">
+    <h2 style="margin:0 0 8px;font-size:24px;">What You Can Expect</h2>
+    <p>
+      You’re not on Google yet — that’s okay. We earn trust through consistent results and professional service.
+      Here’s what clients can expect every time.
+    </p>
+
+    <div class="reviewGrid">
+      <div class="review">
+        <strong>Professional Standards</strong>
+        <p>We follow a structured checklist so no detail is overlooked.</p>
+      </div>
+      <div class="review">
+        <strong>Reliable Scheduling</strong>
+        <p>Clear communication and dependable service you can count on.</p>
+      </div>
+      <div class="review">
+        <strong>Luxury-Level Finish</strong>
+        <p>We clean with intention — not just surface level.</p>
+      </div>
     </div>
 
-    <div class="service-box">
-        <h4>Airbnb & Short-Term Rentals</h4>
-        <p>Fast turnovers with detail-first checklists and consistent quality.</p>
+    <div class="divider"></div>
+
+    <div class="mini">
+      <strong>Be one of our first featured clients.</strong>
+      <span>After your service, we’ll gladly add your review here (first name + last initial).</span>
     </div>
-</section>
+  </section>
 
-<section class="hero">
-    <h2 class="gold">Request Your Free Quote</h2>
-    <p>Call or text us today for fast scheduling.</p>
-    <a href="tel:2393663572" class="button">239-366-3572</a>
-    <br><br>
-    <p>Email: prestigiouscleaning63@gmail.com</p>
-</section>
+  <!-- About -->
+  <section class="card section" id="about">
+    <h2 style="margin:0 0 8px;font-size:24px;">Meet the Owner</h2>
 
-<footer>
-    <p>Prestigious Cleaning LLC</p>
-    <p>Lee County • Collier County</p>
-    <p>© 2026 All Rights Reserved</p>
-</footer>
+    <div class="aboutGrid">
+      <div style="text-align:center;">
+        <div class="avatar">SW</div>
+        <div style="margin-top:10px;">
+          <strong>Shayla Williams</strong>
+          <div class="subtle">Owner • Prestigious Cleaning LLC</div>
+        </div>
+      </div>
+
+      <div>
+        <p>
+          Hi, I’m <strong>Shayla Williams</strong>, founder of Prestigious Cleaning LLC.
+          I started this company with one goal — to deliver cleaning services that feel elevated, professional,
+          and truly detailed.
+        </p>
+
+        <p>
+          I believe cleaning is more than wiping surfaces — it’s about creating a space that feels refreshed,
+          organized, and cared for. Whether it’s a home, office, post-construction project, or exterior service,
+          I take pride in every detail.
+        </p>
+
+        <p>
+          My commitment is simple: clear communication, dependable scheduling, and luxury-level results — every time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Quote + Callback -->
+  <section class="card section" id="quote">
+    <h2 style="margin:0 0 8px;font-size:24px;">Request a Free Quote</h2>
+    <p>Fill this out and press “Send Quote Request.” It opens an email with your details.</p>
+
+    <form id="quoteForm">
+      <div class="two">
+        <div>
+          <label for="q_name">Name</label>
+          <input id="q_name" required placeholder="Your name" />
+        </div>
+        <div>
+          <label for="q_phone">Phone</label>
+          <input id="q_phone" required placeholder="Your phone number" />
+        </div>
+      </div>
+
+      <div class="two">
+        <div>
+          <label for="q_type">Service Needed</label>
+          <select id="q_type" required>
+            <option value="">Select one</option>
+            <option>Residential Cleaning</option>
+            <option>DEEP CLEANING</option>
+            <option>Move-In / Move-Out</option>
+            <option>OFFICE & JANITORIAL SERVICES</option>
+            <option>POST-CONSTRUCTION CLEANUP</option>
+            <option>Pressure Washing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="q_area">Area</label>
+          <select id="q_area" required>
+            <option value="">Select one</option>
+            <option>Lee County</option>
+            <option>Collier County</option>
+            <option>Port Charlotte</option>
+            <option>Other (write in notes)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="two">
+        <div>
+          <label for="q_when">Preferred Date/Time</label>
+          <input id="q_when" placeholder="Example: Friday after 3pm" />
+        </div>
+        <div>
+          <label for="q_size">Size / Details</label>
+          <input id="q_size" placeholder="Example: 3 bed / 2 bath, 1,600 sq ft / office sq ft" />
+        </div>
+      </div>
+
+      <label for="q_notes">Notes</label>
+      <textarea id="q_notes" placeholder="Tell us what you need (focus areas, special requests, pets, office size, etc.)"></textarea>
+
+      <!-- Callback option -->
+      <div class="checkRow">
+        <input type="checkbox" id="q_callback" />
+        <label for="q_callback" style="margin:0">Request a callback instead of email reply</label>
+      </div>
+
+      <div class="two" style="margin-top:12px;">
+        <div>
+          <label for="q_besttime">Best time to call</label>
+          <select id="q_besttime">
+            <option value="">Select (optional)</option>
+            <option>Morning (8am–11am)</option>
+            <option>Midday (11am–2pm)</option>
+            <option>Afternoon (2pm–5pm)</option>
+            <option>Evening (5pm–7pm)</option>
+          </select>
+        </div>
+        <div>
+          <label for="q_method">Preferred contact method</label>
+          <select id="q_method">
+            <option value="">Select (optional)</option>
+            <option>Call</option>
+            <option>Text</option>
+            <option>Email</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rowBtns">
+        <button class="btn gold" type="submit">Send Quote Request</button>
+        <a class="btn" href="tel:2393663572">Call/Text</a>
+        <a class="btn ghost" href="mailto:prestigiouscleaning63@gmail.com">Email</a>
+      </div>
+
+      <p class="subtle">Goes to: <strong>prestigiouscleaning63@gmail.com</strong></p>
+    </form>
+  </section>
+
+  <footer>
+    <div>© <span id="yr"></span> Prestigious Cleaning LLC</div>
+    <div>
+      <a class="link" href="tel:2393663572">239-366-3572</a>
+      <span style="opacity:.5;"> • </span>
+      <a class="link" href="mailto:prestigiouscleaning63@gmail.com">prestigiouscleaning63@gmail.com</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  document.getElementById("quoteForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("q_name").value.trim();
+    const phone = document.getElementById("q_phone").value.trim();
+    const type = document.getElementById("q_type").value;
+    const area = document.getElementById("q_area").value;
+    const when = document.getElementById("q_when").value.trim();
+    const size = document.getElementById("q_size").value.trim();
+    const notes = document.getElementById("q_notes").value.trim();
+
+    const wantsCallback = document.getElementById("q_callback").checked ? "YES" : "No";
+    const bestTime = document.getElementById("q_besttime").value;
+    const method = document.getElementById("q_method").value;
+
+    const subject = encodeURIComponent("Free Quote Request - Prestigious Cleaning LLC");
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\n\nService Needed: ${type}\nArea: ${area}\nPreferred Time: ${when}\nSize/Details: ${size}\n\nRequest Callback: ${wantsCallback}\nBest Time to Call: ${bestTime}\nPreferred Contact Method: ${method}\n\nNotes:\n${notes}\n`
+    );
+
+    window.location.href = `mailto:prestigiouscleaning63@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>
 
 </body>
 </html>
