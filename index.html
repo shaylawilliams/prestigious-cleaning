@@ -1,419 +1,152 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prestigious Cleaning LLC | Luxury Residential & Commercial Cleaning</title>
-  <meta name="description" content="Prestigious Cleaning LLC provides luxury residential and commercial cleaning in Lee County and Collier County. Call/Text 239-366-3572 for a free quote." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestigious Cleaning LLC | Luxury Residential & Commercial Cleaning</title>
 
-  <!-- SEO / Sharing -->
-  <meta name="keywords" content="luxury cleaning Lee County FL, luxury cleaning Collier County FL, house cleaning Fort Myers, house cleaning Cape Coral, office cleaning Naples, office cleaning Fort Myers, deep cleaning, move out cleaning, Airbnb turnover cleaning">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Prestigious Cleaning LLC | Luxury Residential & Commercial Cleaning">
-  <meta property="og:description" content="Luxury home & office cleaning in Lee County and Collier County. Call/Text 239-366-3572 for a free quote.">
-  <meta property="og:type" content="website">
+<meta name="description" content="Prestigious Cleaning LLC provides luxury residential and commercial cleaning services in Lee County and Collier County, FL. Call 239-366-3572 for a free quote.">
 
-  <style>
-    :root{
-      --bg:#07080b;
-      --bg2:#0b0d12;
-      --card:rgba(255,255,255,.05);
-      --line:rgba(255,255,255,.14);
-      --text:#f7f6f2;
-      --muted:rgba(247,246,242,.78);
-      --gold:#d6b25e;
-      --gold2:#f1d28a;
-      --shadow:0 18px 60px rgba(0,0,0,.55);
-      --r:20px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 15% 0%, rgba(214,178,94,.16), transparent 60%),
-        radial-gradient(900px 500px at 85% 10%, rgba(241,210,138,.10), transparent 55%),
-        linear-gradient(180deg,var(--bg),var(--bg2));
-    }
-    a{color:inherit}
-    .wrap{max-width:1120px;margin:0 auto;padding:22px}
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:14px 0;
-    }
-    .brand{display:flex;flex-direction:column;gap:2px}
-    .brand strong{font-size:18px;letter-spacing:.4px}
-    .brand span{font-size:13px;color:var(--muted)}
-    .navRight{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-    .pill{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:10px 14px;border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--muted);font-size:13px;
-      backdrop-filter: blur(10px);
-    }
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 14px;border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      text-decoration:none;font-weight:700;
-    }
-    .btn.gold{
-      border:none;
-      color:#0b0d12;
-      background:linear-gradient(90deg,var(--gold),var(--gold2));
-      box-shadow:0 12px 30px rgba(214,178,94,.18);
-    }
-    .hero{
-      display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:stretch;
-      margin-top:10px;
-    }
-    @media (max-width:920px){.hero{grid-template-columns:1fr}}
-    .card{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--r);
-      box-shadow:var(--shadow);
-      padding:22px;
-      backdrop-filter: blur(12px);
-    }
-    .shine{
-      position:relative;
-      overflow:hidden;
-    }
-    .shine:before{
-      content:"";
-      position:absolute;inset:-2px;
-      background:linear-gradient(120deg, transparent 30%, rgba(241,210,138,.16), transparent 70%);
-      transform:translateX(-40%);
-      pointer-events:none;
-    }
-    h1{margin:0 0 10px;font-size:46px;line-height:1.05;letter-spacing:-.5px}
-    @media (max-width:520px){h1{font-size:36px}}
-    p{margin:0 0 12px;color:var(--muted);line-height:1.6}
-    .accent{color:var(--gold2)}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
-      color:var(--muted);font-size:13px;
-    }
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-    @media (max-width:920px){.grid3{grid-template-columns:1fr}}
-    .mini{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:14px;
-    }
-    .mini strong{display:block;margin-bottom:6px;color:var(--text)}
-    .section{margin-top:16px}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:920px){.two{grid-template-columns:1fr}}
-    ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
-    .hr{height:1px;background:rgba(255,255,255,.10);margin:14px 0}
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
 
-    /* Form */
-    label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
-    input,select,textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      outline:none;
-    }
-    textarea{min-height:110px;resize:vertical}
-    .rowBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+header {
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 1px solid #eee;
+}
 
-    /* Before/After placeholders */
-    .ph{
-      border-radius:18px;
-      border:1px dashed rgba(241,210,138,.40);
-      background:rgba(255,255,255,.02);
-      padding:14px;
-      min-height:120px;
-      display:flex;align-items:center;justify-content:center;
-      color:rgba(247,246,242,.72);
-      text-align:center;
-    }
+header img {
+    width: 160px;
+    margin-bottom: 20px;
+}
 
-    /* Map */
-    .mapWrap{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.02);
-    }
-    iframe{display:block;width:100%;height:320px;border:0}
+h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+}
 
-    .foot{
-      margin-top:16px;
-      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-      color:rgba(247,246,242,.70);font-size:13px;
-      padding:18px 0;
-    }
-    .subtleLink{color:rgba(247,246,242,.85)}
-  </style>
+.gold {
+    color: #bfa046;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 25px;
+    background-color: #bfa046;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.services {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.services h3 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.service-box {
+    max-width: 800px;
+    margin: 0 auto 25px;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: white;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #111;
+    color: white;
+}
+
+footer a {
+    color: #bfa046;
+    text-decoration: none;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header class="nav">
-      <div class="brand">
-        <strong>Prestigious Cleaning LLC</strong>
-        <span>Luxury Residential • Professional Commercial</span>
-      </div>
-      <div class="navRight">
-        <span class="pill">📍 Lee County • Collier County</span>
-        <a class="btn" href="tel:2393663572">Call/Text</a>
-        <a class="btn gold" href="#quote">Get a Free Quote</a>
-      </div>
-    </header>
 
-    <main class="hero">
-      <section class="card shine">
-        <div class="pill" style="max-width:max-content;margin-bottom:12px;">✨ Premium finish • Reliable scheduling • Respectful service</div>
-        <h1>Luxury cleaning with a <span class="accent">prestigious</span> standard.</h1>
-        <p>
-          We deliver consistent, detailed cleaning for <strong>homes</strong>, <strong>offices</strong>, and <strong>short-term rentals</strong>
-          across Lee County and Collier County. Clear communication, dependable scheduling, and results you can feel.
-        </p>
+<header>
+    <img src="Photoroom_20251231_135639.png" alt="Prestigious Cleaning Logo">
+    <h1 class="gold">Prestigious Cleaning LLC</h1>
+    <p>Residential & Commercial Cleaning</p>
+    <p>Serving Lee County & Collier County, FL</p>
+</header>
 
-        <div class="badges">
-          <span class="badge">✅ Detail-first checklist</span>
-          <span class="badge">✅ Professional presentation</span>
-          <span class="badge">✅ Fast quotes</span>
-          <span class="badge">✅ Respectful & reliable</span>
-        </div>
-
-        <div class="rowBtns">
-          <a class="btn gold" href="#quote">Request Quote</a>
-          <a class="btn" href="tel:2393663572">239-366-3572</a>
-          <a class="btn" href="mailto:prestigiouscleaning63@gmail.com">Email</a>
-        </div>
-
-        <div class="grid3">
-          <div class="mini">
-            <strong>For Homes</strong>
-            <span style="color:var(--muted);">Standard, deep clean, move-in/out, add-ons.</span>
-          </div>
-          <div class="mini">
-            <strong>For Offices</strong>
-            <span style="color:var(--muted);">Suites, offices, and small business spaces.</span>
-          </div>
-          <div class="mini">
-            <strong>For Rentals</strong>
-            <span style="color:var(--muted);">Airbnb turnovers with quick, reliable resets.</span>
-          </div>
-        </div>
-      </section>
-
-      <aside class="card">
-        <h2 style="margin:0 0 10px;font-size:20px;">Services</h2>
-        <ul>
-          <li>Residential Cleaning (standard + deep clean)</li>
-          <li>Move-In / Move-Out Cleaning</li>
-          <li>Commercial Office Cleaning</li>
-          <li>Airbnb / Short-Term Rental Turnovers</li>
-          <li>One-Time Projects (special requests)</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <h2 style="margin:0 0 10px;font-size:20px;">Service Areas</h2>
-        <ul>
-          <li>Lee County</li>
-          <li>Collier County</li>
-          <li>Nearby areas (ask us)</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <div class="mini">
-          <strong>Contact</strong>
-          <div style="color:var(--muted);line-height:1.7">
-            Call/Text: <a class="subtleLink" href="tel:2393663572">239-366-3572</a><br/>
-            Email: <a class="subtleLink" href="mailto:prestigiouscleaning63@gmail.com">prestigiouscleaning63@gmail.com</a>
-          </div>
-        </div>
-      </aside>
-    </main>
-
-    <section class="card section" id="quote">
-      <h2 style="margin:0 0 8px;font-size:24px;">Get a Free Quote</h2>
-      <p>Fill this out and press “Send Quote Request.” It opens an email to us with all the details.</p>
-
-      <form id="quoteForm">
-        <div class="two">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" required placeholder="Your name" />
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input id="phone" required placeholder="Your phone number" />
-          </div>
-        </div>
-
-        <div class="two">
-          <div>
-            <label for="type">Cleaning Type</label>
-            <select id="type" required>
-              <option value="">Select one</option>
-              <option>Residential - Standard</option>
-              <option>Residential - Deep Clean</option>
-              <option>Move-In / Move-Out</option>
-              <option>Commercial Office</option>
-              <option>Airbnb Turnover</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label for="area">Service Area</label>
-            <select id="area" required>
-              <option value="">Select one</option>
-              <option>Lee County</option>
-              <option>Collier County</option>
-              <option>Other (write in notes)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="two">
-          <div>
-            <label for="when">Preferred Date/Time</label>
-            <input id="when" placeholder="Example: Friday after 3pm" />
-          </div>
-          <div>
-            <label for="size">Size / Details</label>
-            <input id="size" placeholder="Example: 3 bed / 2 bath, 1,600 sq ft" />
-          </div>
-        </div>
-
-        <label for="notes">Notes (what needs attention?)</label>
-        <textarea id="notes" placeholder="Example: kitchen + bathrooms focus, pet hair, first-time deep clean, office suite, etc."></textarea>
-
-        <div class="rowBtns">
-          <button class="btn gold" type="submit">Send Quote Request</button>
-          <a class="btn" href="tel:2393663572">Call/Text</a>
-          <a class="btn" href="mailto:prestigiouscleaning63@gmail.com">Email</a>
-        </div>
-
-        <p style="margin-top:10px;font-size:13px;color:rgba(247,246,242,.70);">
-          Email goes to: <strong>prestigiouscleaning63@gmail.com</strong>
-        </p>
-      </form>
-    </section>
-
-    <section class="card section">
-      <h2 style="margin:0 0 8px;font-size:22px;">Before & After</h2>
-      <p>Replace these placeholders with your photos later (you can add images anytime).</p>
-      <div class="two" style="margin-top:12px;">
-        <div class="ph"><div><strong>Before</strong><br/>Upload a “before” photo</div></div>
-        <div class="ph"><div><strong>After</strong><br/>Upload an “after” photo</div></div>
-      </div>
-    </section>
-
-    <section class="card section">
-      <h2 style="margin:0 0 8px;font-size:22px;">Reviews</h2>
-      <p>If you don’t have reviews yet, we can swap these for “What to expect” until you do.</p>
-      <div class="two" style="margin-top:12px;">
-        <div class="mini"><strong>“Professional, detailed, and on time.”</strong><div style="color:var(--muted);margin-top:6px;">— Client</div></div>
-        <div class="mini"><strong>“Our office looked amazing — easy communication.”</strong><div style="color:var(--muted);margin-top:6px;">— Business Client</div></div>
-      </div>
-    </section>
-
-    <section class="card section">
-      <h2 style="margin:0 0 8px;font-size:22px;">Service Area Map</h2>
-      <p>Centered to cover Lee County and Collier County.</p>
-      <div class="mapWrap" style="margin-top:12px;">
-        <iframe
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Lee+County+FL+and+Collier+County+FL&output=embed">
-        </iframe>
-      </div>
-    </section>
-
-    <footer class="foot">
-      <div>© <span id="yr"></span> Prestigious Cleaning LLC</div>
-      <div>
-        <a class="subtleLink" href="tel:2393663572">239-366-3572</a>
-        <span style="opacity:.6;"> • </span>
-        <a class="subtleLink" href="mailto:prestigiouscleaning63@gmail.com">prestigiouscleaning63@gmail.com</a>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
-
-    document.getElementById("quoteForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const type = document.getElementById("type").value;
-      const area = document.getElementById("area").value;
-      const when = document.getElementById("when").value.trim();
-      const size = document.getElementById("size").value.trim();
-      const notes = document.getElementById("notes").value.trim();
-
-      const subject = encodeURIComponent("Quote Request - Prestigious Cleaning LLC");
-      const body = encodeURIComponent(
-        `Name: ${name}\nPhone: ${phone}\n\nService Type: ${type}\nArea: ${area}\nPreferred Time: ${when}\nSize/Details: ${size}\n\nNotes:\n${notes}\n`
-      );
-
-      window.location.href = `mailto:prestigiouscleaning63@gmail.com?subject=${subject}&body=${body}`;
-    });
-  </script>
-</body>
-</html>
-<div class="brand">
-  <img src="logo.png" alt="Prestigious Cleaning Logo" style="height:55px; margin-bottom:5px;">
-  <span style="font-size:13px;color:rgba(247,246,242,.75);">Luxury Residential • Professional Commercial</span>
-</div>
 <section class="hero">
-  <div class="hero-content">
-
-    <img src="logo.png" alt="Prestigious Cleaning Logo" style="height:110px; margin-bottom:30px;">
-
-    <h1 style="font-family: 'Georgia', serif; font-weight:500; letter-spacing:1px;">
-      Exceptional Cleaning.<br>
-      Elevated Standards.
-    </h1>
-
-    <p style="max-width:600px; margin:20px auto; color:rgba(247,246,242,.75);">
-      Luxury residential and professional commercial cleaning services 
-      throughout Lee and Collier County. Designed for clients who expect excellence.
+    <h2>Luxury Cleaning That Speaks for Itself.</h2>
+    <p>
+        We deliver consistent, detailed cleaning for homes, offices, and short-term rentals.
+        Clear communication, dependable scheduling, and results you can feel.
     </p>
+    <a href="tel:2393663572" class="button">Call for a Free Quote</a>
+</section>
 
-    <div style="margin-top:30px;">
-      <a href="tel:2393663572" class="btn">Call Now</a>
-      <a href="#quote" class="btn btn-secondary">Request a Private Quote</a>
+<section class="services">
+    <h3 class="gold">Our Services</h3>
+
+    <div class="service-box">
+        <h4>Residential Cleaning</h4>
+        <p>Routine cleanings, deep cleans, and move-out services.</p>
     </div>
 
-  </div>
-</section>
-.btn {
-  background: linear-gradient(135deg, #caa64a, #f5d47a);
-  color: #0e1117;
-  padding: 14px 28px;
-  border-radius: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  margin: 5px;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
+    <div class="service-box">
+        <h4>Commercial Cleaning</h4>
+        <p>Office cleaning with professional, dependable service.</p>
+    </div>
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(202,166,74,0.4);
-}
+    <div class="service-box">
+        <h4>Airbnb & Short-Term Rentals</h4>
+        <p>Fast turnovers with detail-first checklists and consistent quality.</p>
+    </div>
+</section>
+
+<section class="hero">
+    <h2 class="gold">Request Your Free Quote</h2>
+    <p>Call or text us today for fast scheduling.</p>
+    <a href="tel:2393663572" class="button">239-366-3572</a>
+    <br><br>
+    <p>Email: prestigiouscleaning63@gmail.com</p>
+</section>
+
+<footer>
+    <p>Prestigious Cleaning LLC</p>
+    <p>Lee County • Collier County</p>
+    <p>© 2026 All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
