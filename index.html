@@ -505,40 +505,50 @@
     </div>
   </section>
 
-  <!-- Free Quote + Callback -->
+  <!-- Free Quote (Formspree) -->
   <section class="card section" id="quote">
     <h2 style="margin:0 0 8px;font-size:24px;">Request a Free Quote</h2>
-    <p>Fill this out and press “Send Quote Request.” It opens an email with your details.</p>
+    <p>Fill this out and press “Send Quote Request.” You’ll see a confirmation message after it sends.</p>
 
-    <form id="quoteForm">
+    <form id="quoteForm" action="https://formspree.io/f/xeelzydg" method="POST">
+      <input type="hidden" name="_subject" value="New Quote Request - Prestigious Cleaning LLC">
+
       <div class="two">
         <div>
           <label for="q_name">Name</label>
-          <input id="q_name" required placeholder="Your name" />
+          <input id="q_name" name="name" required placeholder="Your name" />
         </div>
         <div>
           <label for="q_phone">Phone</label>
-          <input id="q_phone" required placeholder="Your phone number" />
+          <input id="q_phone" name="phone" required placeholder="Your phone number" />
         </div>
       </div>
 
       <div class="two">
         <div>
+          <label for="q_email">Email</label>
+          <input id="q_email" name="email" type="email" required placeholder="Your email" />
+        </div>
+        <div>
           <label for="q_type">Service Needed</label>
-          <select id="q_type" required>
+          <select id="q_type" name="service" required>
             <option value="">Select one</option>
             <option>Residential Cleaning</option>
             <option>DEEP CLEANING</option>
             <option>Move-In / Move-Out</option>
             <option>OFFICE & JANITORIAL SERVICES</option>
             <option>POST-CONSTRUCTION CLEANUP</option>
+            <option>POST-CONSTRUCTION CLEANUP</option>
             <option>Pressure Washing</option>
             <option>Other</option>
           </select>
         </div>
+      </div>
+
+      <div class="two">
         <div>
           <label for="q_area">Area</label>
-          <select id="q_area" required>
+          <select id="q_area" name="area" required>
             <option value="">Select one</option>
             <option>Lee County</option>
             <option>Collier County</option>
@@ -546,32 +556,20 @@
             <option>Other (write in notes)</option>
           </select>
         </div>
+        <div>
+          <label for="q_when">Preferred Date/Time</label>
+          <input id="q_when" name="preferred_time" placeholder="Example: Friday after 3pm" />
+        </div>
       </div>
 
       <div class="two">
         <div>
-          <label for="q_when">Preferred Date/Time</label>
-          <input id="q_when" placeholder="Example: Friday after 3pm" />
-        </div>
-        <div>
           <label for="q_size">Size / Details</label>
-          <input id="q_size" placeholder="Example: 3 bed / 2 bath, 1,600 sq ft / office sq ft" />
+          <input id="q_size" name="size_details" placeholder="Example: 3 bed / 2 bath, 1,600 sq ft / office sq ft" />
         </div>
-      </div>
-
-      <label for="q_notes">Notes</label>
-      <textarea id="q_notes" placeholder="Tell us what you need (focus areas, special requests, pets, office size, etc.)"></textarea>
-
-      <!-- Callback option -->
-      <div class="checkRow">
-        <input type="checkbox" id="q_callback" />
-        <label for="q_callback" style="margin:0">Request a callback instead of email reply</label>
-      </div>
-
-      <div class="two" style="margin-top:12px;">
         <div>
           <label for="q_besttime">Best time to call</label>
-          <select id="q_besttime">
+          <select id="q_besttime" name="best_time_to_call">
             <option value="">Select (optional)</option>
             <option>Morning (8am–11am)</option>
             <option>Midday (11am–2pm)</option>
@@ -579,16 +577,28 @@
             <option>Evening (5pm–7pm)</option>
           </select>
         </div>
+      </div>
+
+      <div class="checkRow">
+        <input type="checkbox" id="q_callback" name="request_callback" value="Yes" />
+        <label for="q_callback" style="margin:0">Request a callback instead of email reply</label>
+      </div>
+
+      <div class="two" style="margin-top:12px;">
         <div>
           <label for="q_method">Preferred contact method</label>
-          <select id="q_method">
+          <select id="q_method" name="preferred_contact_method">
             <option value="">Select (optional)</option>
             <option>Call</option>
             <option>Text</option>
             <option>Email</option>
           </select>
         </div>
+        <div></div>
       </div>
+
+      <label for="q_notes">Notes</label>
+      <textarea id="q_notes" name="message" placeholder="Tell us what you need (focus areas, special requests, pets, office size, etc.)"></textarea>
 
       <div class="rowBtns">
         <button class="btn gold" type="submit">Send Quote Request</button>
@@ -596,7 +606,7 @@
         <a class="btn ghost" href="mailto:prestigiouscleaning63@gmail.com">Email</a>
       </div>
 
-      <p class="subtle">Goes to: <strong>prestigiouscleaning63@gmail.com</strong></p>
+      <p id="formStatus" class="subtle" style="margin-top:10px;"></p>
     </form>
   </section>
 
@@ -614,79 +624,6 @@
 <script>
   document.getElementById("yr").textContent = new Date().getFullYear();
 
-  document.getElementById("quoteForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const name = document.getElementById("q_name").value.trim();
-    const phone = document.getElementById("q_phone").value.trim();
-    const type = document.getElementById("q_type").value;
-    const area = document.getElementById("q_area").value;
-    const when = document.getElementById("q_when").value.trim();
-    const size = document.getElementById("q_size").value.trim();
-    const notes = document.getElementById("q_notes").value.trim();
-
-    const wantsCallback = document.getElementById("q_callback").checked ? "YES" : "No";
-    const bestTime = document.getElementById("q_besttime").value;
-    const method = document.getElementById("q_method").value;
-
-    const subject = encodeURIComponent("Free Quote Request - Prestigious Cleaning LLC");
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\n\nService Needed: ${type}\nArea: ${area}\nPreferred Time: ${when}\nSize/Details: ${size}\n\nRequest Callback: ${wantsCallback}\nBest Time to Call: ${bestTime}\nPreferred Contact Method: ${method}\n\nNotes:\n${notes}\n`
-    );
-
-    window.location.href = `mailto:prestigiouscleaning63@gmail.com?subject=${subject}&body=${body}`;
-  });
-</script>
-
-</body>
-</html>
-<form action="https://formspree.io/f/xeelzydg" method="POST">
-
-  <label>Full Name</label>
-  <input type="text" name="name" placeholder="Enter your full name" required>
-
-  <label>Email</label>
-  <input type="email" name="email" placeholder="Enter your email" required>
-
-  <label>Phone Number</label>
-  <input type="tel" name="phone" placeholder="Enter your phone number">
-
-  <label>Service Needed</label>
-  <input type="text" name="service" placeholder="Ex: Deep Cleaning, Office Cleaning, etc.">
-
-  <label>Message</label>
-  <textarea name="message" placeholder="Tell us about your cleaning needs..." required></textarea>
-
-  <button type="submit">Request Free Quote</button>
-
-</form>
-<div id="thankyou" style="display:none; padding:40px; text-align:center;">
-  <h2>Thank You!</h2>
-  <p>Your quote request has been received. We will contact you within 24 hours.</p>
-</div>
-<form id="quoteForm" action="https://formspree.io/f/xeelzydg" method="POST">
-  <input type="hidden" name="_subject" value="New Quote Request - Prestigious Cleaning">
-
-  <label>Full Name</label>
-  <input type="text" name="name" placeholder="Enter your full name" required>
-
-  <label>Email</label>
-  <input type="email" name="email" placeholder="Enter your email" required>
-
-  <label>Phone Number</label>
-  <input type="tel" name="phone" placeholder="Enter your phone number">
-
-  <label>Service Needed</label>
-  <input type="text" name="service" placeholder="Ex: Deep Cleaning, Office Cleaning, etc.">
-
-  <label>Message</label>
-  <textarea name="message" placeholder="Tell us about your cleaning needs..." required></textarea>
-
-  <button type="submit">Request Free Quote</button>
-
-  <p id="formStatus" style="margin-top:12px;"></p>
-</form>
-
-<script>
   const form = document.getElementById("quoteForm");
   const statusEl = document.getElementById("formStatus");
 
@@ -695,10 +632,9 @@
     statusEl.textContent = "Sending...";
 
     try {
-      const formData = new FormData(form);
       const res = await fetch(form.action, {
         method: "POST",
-        body: formData,
+        body: new FormData(form),
         headers: { "Accept": "application/json" }
       });
 
@@ -706,10 +642,13 @@
         form.reset();
         statusEl.textContent = "✅ Thank you! Your quote request was sent. We’ll contact you within 24 hours.";
       } else {
-        statusEl.textContent = "❌ Something went wrong. Please try again or call us.";
+        statusEl.textContent = "❌ Something went wrong. Please try again or call/text us.";
       }
     } catch (err) {
       statusEl.textContent = "❌ Network error. Please try again.";
     }
   });
 </script>
+
+</body>
+</html>
